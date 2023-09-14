@@ -1,4 +1,5 @@
 import { Form, useActionData, useNavigation } from "react-router-dom";
+import Button from "../../ui/Button";
 
 // https://uibakery.io/regex-library/phone-number
 
@@ -41,13 +42,25 @@ function CreateOrder() {
       <Form method="POST">
         <div>
           <label htmlFor="name">First Name</label>
-          <input type="text" name="customer" id="name" required />
+          <input
+            type="text"
+            name="customer"
+            id="name"
+            className="input"
+            required
+          />
         </div>
 
         <div>
           <label htmlFor="phone">Phone number</label>
           <div>
-            <input type="tel" name="phone" id="phone" required />
+            <input
+              type="tel"
+              className="input"
+              name="phone"
+              id="phone"
+              required
+            />
           </div>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
@@ -55,12 +68,19 @@ function CreateOrder() {
         <div>
           <label htmlFor="address">Address</label>
           <div>
-            <input type="text" name="address" id="address" required />
+            <input
+              type="text"
+              name="address"
+              id="address"
+              required
+              className="input"
+            />
           </div>
         </div>
 
         <div>
           <input
+            className="cursor- h-6 w-6 accent-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             type="checkbox"
             name="priority"
             id="priority"
@@ -72,9 +92,9 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <Button disabled={isSubmitting}>
             {isSubmitting ? "Placing Order..." : "Order now"}
-          </button>
+          </Button>
         </div>
       </Form>
     </div>
