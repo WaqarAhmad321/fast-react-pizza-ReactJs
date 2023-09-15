@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
-function LinkButton({ to, children }) {
+function LinkButton({ children, to }) {
   const navigate = useNavigate();
-  const className = "text-sm text-blue-500 hover:text-blue-600 hover:underline";
+  const className = 'text-sm text-blue-500 hover:text-blue-600 hover:underline';
 
-  if (to === "-1")
+  if (to === '-1')
     return (
       <button className={className} onClick={() => navigate(-1)}>
         {children}
@@ -12,7 +12,7 @@ function LinkButton({ to, children }) {
     );
 
   return (
-    <Link to={to} className={className} onClick={() => navigate(to)}>
+    <Link to={to} className={className}>
       {children}
     </Link>
   );
