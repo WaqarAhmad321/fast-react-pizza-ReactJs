@@ -16,7 +16,7 @@ function Home() {
         </span>
       </h1>
 
-      {username === "" ? (
+      {username == "" ? (
         <CreateUser />
       ) : (
         <Button to="/menu" type="primary">

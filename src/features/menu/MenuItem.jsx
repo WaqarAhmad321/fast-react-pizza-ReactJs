@@ -6,8 +6,10 @@ import DeleteItem from "../cart/DeleteItem";
 import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ pizza }) {
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
   const dispatch = useDispatch();
+
+  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+
   const currentQuantity = useSelector(getCurrentQuantitybyId(id));
   const isInCart = currentQuantity > 0;
 
@@ -44,10 +46,10 @@ function MenuItem({ pizza }) {
             </p>
           )}
           {isInCart && (
-            <>
-              <UpdateItemQuantity id={id} />
+            <div className="flex items-center gap-3 md:gap-8">
+              <UpdateItemQuantity id={id} currentQuantity={currentQuantity} />
               <DeleteItem pizzaId={id} />
-            </>
+            </div>
           )}
           {!soldOut && !isInCart && (
             <Button onClick={handleAddItem} type="small">
