@@ -55,3 +55,7 @@ To deploy this project run
 ## Tech Stack
 
 **Client:** React, TailwindCSS
+
+## Author
+
+- [@WaqarAhmad321](https://github.com/WaqarAhmad321)
