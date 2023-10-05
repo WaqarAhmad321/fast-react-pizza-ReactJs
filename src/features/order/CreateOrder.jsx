@@ -5,13 +5,9 @@ import Button from "../../ui/Button";
 import EmptyCart from "../cart/EmptyCart";
 import { useSelector } from "react-redux";
 import store from "../../store";
-import {
-  clearCart,
-  getCart,
-  getTotalPrice,
-  getUsername,
-} from "../cart/cartSlice";
+import { clearCart, getCart, getTotalPrice } from "../cart/cartSlice";
 import { formatCurrency } from "../../utils/helpers";
+import { getUsername } from "../user/userSlice";
 
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(

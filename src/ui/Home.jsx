@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import CreateUser from "../features/user/CreateUser";
 import Button from "./Button";
-import { getUsername } from "../features/cart/cartSlice";
+import { getUsername } from "../features/user/userSlice";
 
 function Home() {
   const username = useSelector(getUsername);
@@ -16,7 +16,7 @@ function Home() {
         </span>
       </h1>
 
-      {username == "" ? (
+      {username === "" ? (
         <CreateUser />
       ) : (
         <Button to="/menu" type="primary">

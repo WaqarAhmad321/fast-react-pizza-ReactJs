@@ -44,7 +44,7 @@ export const {
   clearCart,
 } = cartSlice.actions;
 
-export const getUsername = (state) => state.cart.username;
+
 export const getTotalQuantity = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
 
